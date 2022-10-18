@@ -1,0 +1,23 @@
+{
+  "header": {
+    "countryCode": "en_WW",
+    "homepage": "/",
+    "menu": [
+      {
+        "id": "homepage",
+        "label": "Homepage",
+        "path": "/"
+      },
+      {
+        "id": "about",
+        "label": "About",
+        "path": "/about"
+      }
+    ]
+  },
+  "footer": {
+    "legals": {
+      "copy": "Copyright © 2022 Forearm"
+    }
+  }
+}
