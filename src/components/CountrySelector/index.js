@@ -14,7 +14,7 @@ const CountrySelector = ({ locale, pageId }) => {
       {country &&
           <>
             {country.map((_country,i) => (
-                <Link href={_country.url} key={i} locale={false}>
+                <Link href={_country.url} key={i} locale={_country.hreflang}>
                   <a className={` ${locale !== _country.siteLocale ? "" : style.xActive}`}>
                     {_country.hreflang} {_country.url}
                     <br />

@@ -9,14 +9,14 @@ const Header = ({ locale, pathname }) => {
 
   useEffect(() => {
     setNav(require("../../static_data/commons/" + locale + "/nav.json"));
-  }, [locale]);
+  }, []);
 
   return (
     <div>
       {_pathname}
 
       {nav.header?.menu?.map((_nav) => (
-        <Link href={_nav.path} key={_nav.id} locale={false}>
+        <Link href={_nav.path} key={_nav.id} locale={locale}>
           <a className={` ${_pathname !== _nav.path ? "" : style.xActive}`}>
             {_nav.label}
           </a>
