@@ -4,8 +4,8 @@ import {useCountdown} from "usehooks-ts";
 import ArrowDown from "../svg/arrowdown";
 
 const MainTitle = () => {
-    let princetonorange = "#ee7b30";
-    let morningblue = "#8aa8a1";
+    let goldenrod = "#e6af2e";
+    let cosmiccobalt = "#3d348b";
 
     const [visible, setVisible] = useState(true);
 
@@ -13,12 +13,12 @@ const MainTitle = () => {
         useCountdown({
             countStart: 1,
             countStop: 101,
-            intervalMs: 100,
+            intervalMs: 125,
             isIncrement: true,
         })
 
 
-    let valore = {background: "linear-gradient(to right, "+princetonorange+", "+princetonorange+" "+count+"%, "+morningblue+" "+count+"%, "+morningblue+" 100%)"};
+    let valore = {background: "linear-gradient(to right, "+goldenrod+", "+goldenrod+" "+count+"%, "+cosmiccobalt+" "+count+"%, "+cosmiccobalt+" 100%)"};
 
 
     useEffect(() => {
