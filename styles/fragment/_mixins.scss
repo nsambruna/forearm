@@ -1,0 +1,13 @@
+@mixin font($size, $family, $line-height: auto, $weight: normal, $style: normal) {
+  font-family: $family;
+  font-size: $size;
+  @if ($line-height !=null) {
+    line-height: $line-height;
+  }
+  @if ($weight !=null) {
+    font-weight: $weight;
+  }
+  @if ($style !=null) {
+    font-style: $style;
+  }
+}

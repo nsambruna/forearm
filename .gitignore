@@ -39,3 +39,4 @@ next-env.d.ts
 /.idea/forearm.iml
 /.idea/.gitignore
 /.idea/jsLibraryMappings.xml
+/.idea/misc.xml
