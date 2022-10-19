@@ -25,12 +25,11 @@ export default function Home({ data, pageId }) {
       </Head>
 
       <MainTitle />
-
-      <CountrySelector locale={router.locale} pageId={pageId} />
-      <br />
-      <Header locale={router.locale} pathname={router.pathname} />
-
-      <div>index {router.locale}</div>
+      <div className="faWrapper">
+        <CountrySelector locale={router.locale} pageId={pageId} />
+        <Header locale={router.locale} pathname={router.pathname} />
+        <div>index {router.locale}</div>
+      </div>
     </>
   );
 }

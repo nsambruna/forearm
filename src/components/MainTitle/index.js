@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { useCountdown } from "usehooks-ts";
-import ArrowDown from "../svg/arrowdown";
+//import ArrowDown from "../svg/arrowdown";
 import { useDispatch } from "react-redux";
 import { setMainTitle } from "../../store/actions";
 
 const MainTitle = () => {
   let goldenrod = "#e6af2e";
-  let cosmiccobalt = "#3d348b";
+  let eerieblack = "#191716";
 
   //const mainTitle = useSelector((state) => state.config.mainTitle);
   const [visible, setVisible] = useState(true);
@@ -16,24 +16,24 @@ const MainTitle = () => {
   const [count, { startCountdown, stopCountdown }] = useCountdown({
     countStart: 1,
     countStop: 101,
-    intervalMs: 125,
+    intervalMs: 50,
     isIncrement: true,
   });
 
   let valore = {
     background:
-      "linear-gradient(to right, " +
+      "linear-gradient(100deg, " +
       goldenrod +
       ", " +
       goldenrod +
       " " +
       count +
       "%, " +
-      cosmiccobalt +
+      eerieblack +
       " " +
       count +
       "%, " +
-      cosmiccobalt +
+      eerieblack +
       " 100%)",
   };
 
@@ -47,6 +47,7 @@ const MainTitle = () => {
   useEffect(() => {
     if (count > 100) {
       CloseMainTitle();
+      stopCountdown();
     }
   }, [count]);
 
@@ -57,12 +58,16 @@ const MainTitle = () => {
   }
 
   return (
-    <div className={`${style.faMainTitle} ${!visible ? style.xVisible : ""}`}>
-      <h1 style={valore}>FOREARMS</h1>
-      <a className={style.faMainTitle__close} onClick={CloseMainTitle}>
-        <ArrowDown />
-      </a>
-    </div>
+    <>
+      <div className={`${style.faMainTitle} ${!visible ? style.xVisible : ""}`}>
+        <h1 style={valore}>FOREARMS</h1>
+      </div>
+      <div
+        className={`${style.faMainTitle__bg} ${
+          !visible ? style.xVisibleBg : ""
+        }`}
+      ></div>
+    </>
   );
 };
 

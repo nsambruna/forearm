@@ -1,10 +1,20 @@
-
 @import "fragment/normalize";
 @import "fragment/font";
 @import "fragment/color";
+@import "fragment/layout";
 
-body{
-  font-family: 'Lato', sans-serif;
+body {
+  font-family: "Lato", sans-serif;
   background: $cosmic-cobalt;
   color: $khaki-web;
+}
+
+a {
+  color: $khaki-web;
+  &:visited {
+    color: $khaki-web;
+  }
+  &:hover {
+    text-decoration: none;
+  }
 }
