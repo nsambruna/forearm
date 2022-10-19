@@ -1,0 +1,20 @@
+@import "../../../styles/fragment/index";
+
+.faFooter {
+  margin-top: 200px;
+  background: $eerie-black;
+  padding: 10px 0;
+  font-size: 11px;
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.faFooterMenu {
+  text-transform: uppercase;
+  a {
+    margin-left: 10px;
+    text-decoration: none;
+  }
+}

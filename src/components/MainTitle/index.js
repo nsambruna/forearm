@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { useCountdown } from "usehooks-ts";
-//import ArrowDown from "../svg/arrowdown";
-import { useDispatch } from "react-redux";
-import { setMainTitle } from "../../store/actions";
 
 const MainTitle = () => {
   let goldenrod = "#e6af2e";
   let eerieblack = "#191716";
 
-  //const mainTitle = useSelector((state) => state.config.mainTitle);
   const [visible, setVisible] = useState(true);
-  const dispatch = useDispatch();
 
   const [count, { startCountdown, stopCountdown }] = useCountdown({
     countStart: 1,
@@ -54,7 +49,6 @@ const MainTitle = () => {
   function CloseMainTitle() {
     setVisible(false);
     stopCountdown();
-    dispatch(setMainTitle(false));
   }
 
   return (

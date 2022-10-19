@@ -10,6 +10,8 @@ const navReducer = (state = initialNavState, { type, payload }) => {
   switch (type) {
     case types.SET_NAV:
       return { ...state, ...payload };
+    case types.SET_FOOTER:
+      return { ...state, ...payload };
     default:
       return state;
   }

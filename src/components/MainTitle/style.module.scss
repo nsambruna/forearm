@@ -13,10 +13,15 @@
     height: 100px;
     h1 {
       font-size: 50px;
+      color: $cosmic-cobalt;
+      background: $goldenrod !important;
+      -webkit-text-stroke: 1px $cosmic-cobalt;
+      font-weight: 900;
     }
   }
 
   h1 {
+    transition: all 300ms linear;
     background-clip: text !important;
     -webkit-background-clip: text !important;
     color: transparent;
@@ -32,7 +37,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 400ms linear;
+    letter-spacing: 5px;
+    padding: 10px 20px;
   }
 }
 
@@ -43,7 +49,7 @@
   width: 100%;
   height: 100%;
   bottom: 0;
-  transition: height 600ms ease-in;
+  transition: height 1000ms ease-in;
 
   &.xVisibleBg {
     height: 0;
