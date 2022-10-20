@@ -20,11 +20,14 @@ const navReducer = (state = initialNavState, { type, payload }) => {
 const initialConfigState = {
   locale: null,
   mainTitle: true,
+  pageId: true,
 };
 
 const configReducer = (state = initialConfigState, { type, payload }) => {
   switch (type) {
     case types.SET_LOCALE:
+      return { ...state, ...payload };
+    case types.SET_PAGEID:
       return { ...state, ...payload };
     case types.SET_MAINTITLE:
       return { ...state, ...payload };

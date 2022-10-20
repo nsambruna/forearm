@@ -1,16 +1,22 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFooter, setLocale, setNav } from "../../src/store/actions";
+import {
+  setFooter,
+  setLocale,
+  setNav,
+  setPageId,
+} from "../../src/store/actions";
 import { useRouter } from "next/router";
 
-export default function initStore() {
+export default function initStore(pageId) {
   const router = useRouter();
   const dispatch = useDispatch();
 
   const localeStore = useSelector((state) => state.config.locale);
+
   const header = useSelector((state) => state.nav.header);
   const footer = useSelector((state) => state.nav.footer);
-
+  dispatch(setPageId(pageId));
   if (localeStore !== router.locale || localeStore === null) {
     dispatch(setLocale(router.locale));
     //dispatch(setMainTitle(true));

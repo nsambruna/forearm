@@ -7,22 +7,23 @@ import MainTitle from "../src/components/MainTitle";
 import Footer from "../src/components/Footer";
 import initStore from "./fragment/helper";
 
+import labels from "../src/label/label";
+import Definition from "../src/components/Definition";
+
 export default function Home({ data, pageId }) {
   const router = useRouter();
-  initStore();
+  initStore("homepage");
 
   return (
     <>
       <Head>
         <title>{data.metaTitle}</title>
       </Head>
-      <MainTitle />
-      <CountrySelector locale={router.locale} pageId={pageId} />
-      <Header locale={router.locale} pathname={router.pathname} />
+      <MainTitle locale={router.locale} pathname={router.pathname} />
       <div className="faWrapper">
         <div>index {router.locale}</div>
       </div>
-      <Footer locale={router.locale} />
+      <Footer locale={router.locale} pageId={"homepage"} />
     </>
   );
 }

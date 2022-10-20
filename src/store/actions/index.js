@@ -1,4 +1,10 @@
-import { SET_FOOTER, SET_LOCALE, SET_MAINTITLE, SET_NAV } from "../types";
+import {
+  SET_FOOTER,
+  SET_LOCALE,
+  SET_MAINTITLE,
+  SET_NAV,
+  SET_PAGEID,
+} from "../types";
 
 export const setNav = (header) => ({
   type: SET_NAV,
@@ -12,6 +18,10 @@ export const setFooter = (header) => ({
 export const setLocale = (locale) => ({
   type: SET_LOCALE,
   payload: { locale: locale },
+});
+export const setPageId = (pageId) => ({
+  type: SET_PAGEID,
+  payload: { pageId: pageId },
 });
 
 export const setMainTitle = (value) => ({

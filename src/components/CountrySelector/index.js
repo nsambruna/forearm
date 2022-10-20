@@ -22,7 +22,7 @@ const CountrySelector = ({ locale, pageId }) => {
                 locale !== _country.siteLocale ? "" : style.xActive
               }`}
             >
-              {_country.hreflang} {_country.url}
+              {_country.hreflang}
             </a>
           ))}
         </>
