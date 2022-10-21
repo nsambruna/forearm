@@ -6,6 +6,7 @@ import { setMainTitle } from "../../store/actions";
 import labels from "../../label/label";
 import Header from "../Header";
 import Definition from "../Definition";
+import Link from "next/link";
 
 const MainTitle = ({ locale, pathname }) => {
   let goldenrod = "#e6af2e";
@@ -52,6 +53,17 @@ const MainTitle = ({ locale, pathname }) => {
     }
   }, [count]);
 
+  useEffect(() => {
+    if (visible) {
+      document.body.classList.add("faModalOpen");
+    } else {
+      document.body.classList.remove("faModalOpen");
+    }
+    return () => {
+      document.body.classList.remove("faModalOpen");
+    };
+  }, [visible]);
+
   function CloseMainTitle() {
     setVisible(false);
     stopCountdown();
@@ -61,7 +73,15 @@ const MainTitle = ({ locale, pathname }) => {
   return (
     <>
       <div className={`${style.faMainTitle} ${!visible ? style.xVisible : ""}`}>
-        <h1 style={valore}>{labels[locale || "en"]["titolo"]}</h1>
+        {visible ? (
+          <h1 style={valore}>{labels[locale || "en"]["titolo"]}</h1>
+        ) : (
+          <Link href={"/"} locale={locale}>
+            <h1 style={valore} className={style.faMainTitle__link}>
+              {labels[locale || "en"]["titolo"]}
+            </h1>
+          </Link>
+        )}
         <h2>{labels[locale || "en"]["subtitolo"]}</h2>
       </div>
       <div

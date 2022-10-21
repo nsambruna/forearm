@@ -3,11 +3,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-
+  images: {
+    domains: ["source.unsplash.com"],
+  },
   i18n: {
     locales: ["en", "it"],
     defaultLocale: "en",
-    localeDetection: false
+    localeDetection: false,
   },
   /* async rewrites() {
     return [

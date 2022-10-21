@@ -1,16 +1,14 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Header from "../src/components/Header";
 import Head from "next/head";
-import CountrySelector from "../src/components/CountrySelector";
 import MainTitle from "../src/components/MainTitle";
 import Footer from "../src/components/Footer";
 import initStore from "./fragment/helper";
+import Section from "../src/components/Section";
 
-import labels from "../src/label/label";
-import Definition from "../src/components/Definition";
+//https://codepen.io/noeldelgado/full/BaogqYy
 
-export default function Home({ data, pageId }) {
+export default function Home({ data }) {
   const router = useRouter();
   initStore("homepage");
 
@@ -20,9 +18,12 @@ export default function Home({ data, pageId }) {
         <title>{data.metaTitle}</title>
       </Head>
       <MainTitle locale={router.locale} pathname={router.pathname} />
-      <div className="faWrapper">
-        <div>index {router.locale}</div>
-      </div>
+
+      <Section title={"IN THE SCIENCE"} />
+      <Section title={"IN THE HYSTORY"} />
+      <Section title={"IN THE PRESENT"} />
+      <Section title={"IN THE FUTURE"} />
+
       <Footer locale={router.locale} pageId={"homepage"} />
     </>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import style from "./style.module.scss";
 import { useSelector } from "react-redux";
@@ -7,6 +7,22 @@ const Header = ({ locale, pathname }) => {
   const header = useSelector((state) => state.nav.header);
 
   const _pathname = locale === "en" ? pathname : "/" + locale + "" + pathname;
+
+  const [checked, setChecked] = useState(false);
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
+  useEffect(() => {
+    if (checked) {
+      document.body.classList.add("faModalOpen");
+    } else {
+      document.body.classList.remove("faModalOpen");
+    }
+    return () => {
+      document.body.classList.remove("faModalOpen");
+    };
+  }, [checked]);
 
   return (
     <>
@@ -17,6 +33,7 @@ const Header = ({ locale, pathname }) => {
           role="button"
           title="menu"
           className={style.faHeader__button}
+          onChange={handleChange}
         />
         <label
           htmlFor="navcheck"
