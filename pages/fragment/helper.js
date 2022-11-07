@@ -8,7 +8,7 @@ import {
 } from "../../src/store/actions";
 import { useRouter } from "next/router";
 
-export default function initStore(pageId) {
+export default function InitStore(pageId) {
   const router = useRouter();
   const dispatch = useDispatch();
 

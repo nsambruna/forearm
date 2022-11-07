@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import MainTitle from "../src/components/MainTitle";
 import Footer from "../src/components/Footer";
-import initStore from "./fragment/helper";
+import InitStore from "./fragment/helper";
 
 export default function About({ data, pageId }) {
   const router = useRouter();
-  initStore("about");
+  InitStore("about");
 
   return (
     <>

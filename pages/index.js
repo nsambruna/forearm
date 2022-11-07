@@ -3,14 +3,14 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import MainTitle from "../src/components/MainTitle";
 import Footer from "../src/components/Footer";
-import initStore from "./fragment/helper";
+import InitStore from "./fragment/helper";
 import Section from "../src/components/Section";
 
 //https://codepen.io/noeldelgado/full/BaogqYy
 
 export default function Home({ data }) {
   const router = useRouter();
-  initStore("homepage");
+  InitStore("homepage");
 
   return (
     <>
